@@ -1,0 +1,206 @@
+[gd_scene format=4 uid="uid://16vmuvspq86v"]
+
+[ext_resource type="PackedScene" uid="uid://cbghtnv1lg31s" path="res://worlds/player/player.tscn" id="1_nain1"]
+[ext_resource type="PackedScene" uid="uid://8g4k3vv2af37" path="res://worlds/player/ball.tscn" id="3_c7htk"]
+[ext_resource type="Texture2D" uid="uid://v2xo02bi5ws3" path="res://assets/Breakout Tile Set Free/PNG/29-Breakout-Tiles.png" id="3_wp1yw"]
+[ext_resource type="PackedScene" uid="uid://56mh1mrvdidj" path="res://worlds/bricks/brick.tscn" id="4_wp1yw"]
+[ext_resource type="PackedScene" uid="uid://c1tnwcfqy4qlq" path="res://worlds/bricks/greenbricks.tscn" id="5_12do3"]
+[ext_resource type="Texture2D" uid="uid://dnn1qgkg5mh3v" path="res://assets/Breakout Tile Set Free/PNG/background.png" id="6_3euow"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_12do3"]
+texture = ExtResource("3_wp1yw")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68, -64, -60, 64, 68, 64, 60, -64, 8, -60)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i37k4"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_12do3")
+
+[node name="world" type="Node" unique_id=1091915616]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1872852694]
+z_index = -17
+position = Vector2(586, 348.00003)
+scale = Vector2(0.78545123, 0.7854512)
+texture = ExtResource("6_3euow")
+
+[node name="player" parent="." unique_id=1023696575 instance=ExtResource("1_nain1")]
+position = Vector2(567, 629)
+collision_mask = 1
+
+[node name="ball" parent="." unique_id=1434247851 instance=ExtResource("3_c7htk")]
+position = Vector2(545, 531)
+
+[node name="wall" type="TileMapLayer" parent="." unique_id=1716446643]
+scale = Vector2(0.3, 0.3)
+tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAGADAAoAAAAAAAAAAGADABIAAAAAAAAAAGADABoAAAAAAAAAAGADACIAAAAAAAAAAGADACoAAAAAAAAAAGADADIAAAAAAAAAAGADADoAAAAAAAAAAGADAEIAAAAAAAAAAGADAEoAAAAAAAAAAGADAFIAAAAAAAAAAGADAFoAAAAAAAAAAGADAGIAAAAAAAAAAGADAGoAAAAAAAAAAGADAHIAAAAAAAAAAGADAHoAAAAAAAAAAGADAIIAAAAAAAAAAGALAAMAAAAAAAAAAGATAAMAAAAAAAAAAGAbAAMAAAAAAAAAAGAjAAMAAAAAAAAAAGArAAMAAAAAAAAAAGAzAAMAAAAAAAAAAGA7AAMAAAAAAAAAAGBDAAMAAAAAAAAAAGBLAAMAAAAAAAAAAGBTAAMAAAAAAAAAAGBbAAMAAAAAAAAAAGBjAAMAAAAAAAAAAGBrAAMAAAAAAAAAAGBzAAMAAAAAAAAAAGB7AAMAAAAAAAAAAGCDAAMAAAAAAAAAAGCLAAMAAAAAAAAAAGCTAAMAAAAAAAAAAGCbAAMAAAAAAAAAAGCjAAMAAAAAAAAAAGCrAAMAAAAAAAAAAGCzAAMAAAAAAAAAAGC7AAMAAAAAAAAAAGDDAAMAAAAAAAAAAGDLAAMAAAAAAAAAAGDTAAMAAAAAAAAAAGDbAAMAAAAAAAAAAGDjAAMAAAAAAAAAAGDrAAMAAAAAAAAAAGDrAAsAAAAAAAAAAGDrABMAAAAAAAAAAGDrABsAAAAAAAAAAGDrACMAAAAAAAAAAGDrACsAAAAAAAAAAGDrADMAAAAAAAAAAGDrADsAAAAAAAAAAGDrAEMAAAAAAAAAAGDrAEsAAAAAAAAAAGDrAFMAAAAAAAAAAGDrAFsAAAAAAAAAAGDrAGMAAAAAAAAAAGDrAGsAAAAAAAAAAGDrAHMAAAAAAAAAAGDrAHsAAAAAAAAAAGDrAIMAAAAAAAAAAGA=")
+tile_set = SubResource("TileSet_i37k4")
+
+[node name="bricks" type="Node2D" parent="." unique_id=1951939115]
+
+[node name="brick" parent="bricks" unique_id=388113606 instance=ExtResource("4_wp1yw")]
+position = Vector2(37, 45)
+
+[node name="brick2" parent="bricks" unique_id=1436101187 instance=ExtResource("4_wp1yw")]
+position = Vector2(37, 191)
+
+[node name="brick3" parent="bricks" unique_id=1687409648 instance=ExtResource("4_wp1yw")]
+position = Vector2(188, 76)
+
+[node name="brick4" parent="bricks" unique_id=653827576 instance=ExtResource("4_wp1yw")]
+position = Vector2(187, 289)
+
+[node name="greenbricks3" parent="bricks" unique_id=1283296804 instance=ExtResource("5_12do3")]
+position = Vector2(214, 450)
+
+[node name="brick5" parent="bricks" unique_id=661125393 instance=ExtResource("4_wp1yw")]
+position = Vector2(46, 551)
+
+[node name="brick6" parent="bricks" unique_id=352184127 instance=ExtResource("4_wp1yw")]
+position = Vector2(349, 558)
+
+[node name="brick7" parent="bricks" unique_id=1443561618 instance=ExtResource("4_wp1yw")]
+position = Vector2(752, 52)
+
+[node name="greenbricks4" parent="bricks" unique_id=1003914674 instance=ExtResource("5_12do3")]
+position = Vector2(750, 191)
+
+[node name="greenbricks5" parent="bricks" unique_id=1326354754 instance=ExtResource("5_12do3")]
+position = Vector2(1012, 54)
+
+[node name="brick8" parent="bricks" unique_id=1510955141 instance=ExtResource("4_wp1yw")]
+position = Vector2(912, 139)
+
+[node name="greenbricks6" parent="bricks" unique_id=343080038 instance=ExtResource("5_12do3")]
+position = Vector2(1014, 590)
+
+[node name="brick9" parent="bricks" unique_id=1044492417 instance=ExtResource("4_wp1yw")]
+position = Vector2(761, 318)
+
+[node name="brick10" parent="bricks" unique_id=2054265393 instance=ExtResource("4_wp1yw")]
+position = Vector2(757, 451)
+
+[node name="brick11" parent="bricks" unique_id=559766173 instance=ExtResource("4_wp1yw")]
+position = Vector2(861, 360)
+
+[node name="greenbricks7" parent="bricks" unique_id=2028841094 instance=ExtResource("5_12do3")]
+position = Vector2(857, 271)
+
+[node name="brick12" parent="bricks" unique_id=1521105316 instance=ExtResource("4_wp1yw")]
+position = Vector2(41, 441)
+
+[node name="brick13" parent="bricks" unique_id=1953937621 instance=ExtResource("4_wp1yw")]
+position = Vector2(756, 564)
+
+[node name="greenbricks8" parent="bricks" unique_id=1193321465 instance=ExtResource("5_12do3")]
+position = Vector2(871, 473)
+
+[node name="greenbricks9" parent="bricks" unique_id=372812046 instance=ExtResource("5_12do3")]
+position = Vector2(533, 40)
+
+[node name="brick14" parent="bricks" unique_id=746102432 instance=ExtResource("4_wp1yw")]
+position = Vector2(536, 175)
+
+[node name="greenbricks10" parent="bricks" unique_id=961911403 instance=ExtResource("5_12do3")]
+position = Vector2(540, 389)
+
+[node name="brick15" parent="bricks" unique_id=235955755 instance=ExtResource("4_wp1yw")]
+position = Vector2(538, 467)
+
+[node name="greenbricks" parent="bricks" unique_id=296395175 instance=ExtResource("5_12do3")]
+position = Vector2(298, 180)
+
+[node name="greenbricks2" parent="bricks" unique_id=257209285 instance=ExtResource("5_12do3")]
+position = Vector2(40, 343)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=747748024]
+
+[node name="startscreen" type="ColorRect" parent="UI" unique_id=46557055]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="starttext" type="Label" parent="UI/startscreen" unique_id=129615624]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -11.5
+offset_right = 251.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 40
+text = "CLICK TO START"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://8g4k3vv2af37"]
+
+[ext_resource type="Texture2D" uid="uid://bpr7l4p2fensa" path="res://assets/Breakout Tile Set Free/PNG/58-Breakout-Tiles.png" id="1_a7f8h"]
+[ext_resource type="Script" uid="uid://chkvufd4d2ve" path="res://worlds/player/ball.gd" id="1_dcfbh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq4v1"]
+radius = 63.07139
+
+[node name="ball" type="CharacterBody2D" unique_id=1434247851]
+script = ExtResource("1_dcfbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814381016]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_a7f8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536379402]
+scale = Vector2(0.15, 0.15)
+shape = SubResource("CircleShape2D_eq4v1")

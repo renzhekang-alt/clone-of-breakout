@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://56mh1mrvdidj"]
+
+[ext_resource type="Script" uid="uid://dv5j5u3gjjwkj" path="res://worlds/bricks/brick.gd" id="1_4p1qw"]
+[ext_resource type="Texture2D" uid="uid://buacw3v8u3o2" path="res://assets/Breakout Tile Set Free/PNG/01-Breakout-Tiles.png" id="1_is7kg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eq4v1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_is7kg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i37k4"]
+size = Vector2(74, 24)
+
+[node name="brick" type="StaticBody2D" unique_id=388113606]
+script = ExtResource("1_4p1qw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=343482920]
+position = Vector2(40.999996, 15.999999)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_eq4v1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044953619]
+position = Vector2(41, 16)
+shape = SubResource("RectangleShape2D_i37k4")
